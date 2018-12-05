@@ -137,7 +137,7 @@
 					if(video_type == 1){
 						//YouTube Video bImTB8omR0Y
 						var v_iframe_id = $.trim($('#edit-field-yt-code-0-value').val());
-						var youtubeApi = "AIzaSyDlOaSOXEHxUfBDtGJL_ljPSGkGPh51OVM";
+						var youtubeApi = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 						$.ajax({
 							url: "https://www.googleapis.com/youtube/v3/videos?id=" + v_iframe_id + "&key=" + youtubeApi + "&fields=items(snippet(title,thumbnails,description),contentDetails(duration))&part=snippet,contentDetails",
 							dataType: "json",
@@ -217,7 +217,7 @@
 			function getDuration(data1) {
 				var data = data1;
 				var videoid = $.trim($('#edit-field-yt-code-0-value').val());
-				var youtubeApi = "AIzaSyDlOaSOXEHxUfBDtGJL_ljPSGkGPh51OVM";
+				var youtubeApi = "xxxxxxxxxxxxxxxxxxx";
 				
 				
 				$("#edit-title-0-value").val(data.items[0].snippet.title);
