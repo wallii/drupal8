@@ -1,0 +1,5 @@
+name: 'stylegen'
+type: module
+description: 'Create image styles on image upload'
+core: 8.x
+package: 'media'

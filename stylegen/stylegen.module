@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains stylegen.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Entity\EntityInterface;
+
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function stylegen_file_insert(Drupal\file\FileInterface $file) {
+  $styles = ImageStyle::loadMultiple();
+  $image_uri = $file->getFileUri();
+  foreach ($styles as $style) {
+    $destination = $style->buildUri($image_uri);
+    $style->createDerivative($image_uri, $destination);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function stylegen_file_update(Drupal\file\FileInterface $file) {
+  $styles = ImageStyle::loadMultiple();
+  $image_uri = $file->getFileUri();
+  foreach ($styles as $style) {
+    $destination = $style->buildUri($image_uri);
+    $style->createDerivative($image_uri, $destination);
+  }
+}
