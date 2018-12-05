@@ -1,0 +1,13 @@
+name: Custom Token
+
+type: module
+
+description: 'My Custom Drupal Token Module'
+
+dependencies:
+
+package: My Custom Token Module
+
+version: '1.x'
+
+core: 8.x

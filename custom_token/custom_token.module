@@ -1,0 +1,51 @@
+<?php
+/**
+* @file
+* contains custom_token.module..
+*/
+use Drupal\Core\Render\BubbleableMetadata;
+/*
+* Implemets : hook_token_info().
+*/
+
+function custom_token_token_info() {
+	
+	$types['custom_token_type'] = array(
+										'name' => t('Custom Token Type'),
+										'description' => t('Define Custom Token Type')
+	
+	);
+	
+	$tokens['custom_token_name'] =array(
+	                                    'name' => t('Custom Token Name'),
+										'description' => t('Define Custom Token Name')
+	);
+	
+	return array(
+	             'types' => $types,
+				 'tokens' => array(
+				                   'custom_token_type' => $tokens
+				 )
+				 
+	);
+}
+/*
+* Implements hook_tokens()
+*/
+
+function custom_token_tokens($type, $tokens, array $data, array $options, \Drupal\Core\Render\BubbleableMetadata $bubbleable_metadata) {
+	$replacements = [];
+	if ($type == 'custom_token_type') {
+		foreach ($tokens as $name => $original) {
+			switch ($name) {
+				case 'custom_token_name':
+				$text = 'My Custom Token';
+				$replacements[$original] = $text;
+				break;
+			}
+		}
+		
+	}
+	return $replacements;
+ 
+}
