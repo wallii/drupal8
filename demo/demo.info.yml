@@ -1,0 +1,13 @@
+name: Custom Code for side
+
+type: module
+
+description: 'My Custom Module for side management'
+
+dependencies:
+
+package: custom
+
+version: '1.x'
+
+core: 8.x

@@ -1,0 +1,6 @@
+demo.backendconfiguration:
+  title: 'Demo Menu'
+  route_name: demo.backendconfiguration
+  menu_name: admin
+  parent: system.admin_config_development
+  weight: -8
