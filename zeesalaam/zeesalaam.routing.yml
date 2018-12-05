@@ -1,0 +1,20 @@
+zeesalaam.news_published:
+  path: '/autopublish/news'
+  defaults:
+   _controller: '\Drupal\zeesalaam\Controller\ZeesalaamController::autopublishedNews'
+  requirements:
+   _permission: 'access content'
+zeesalaam.news_autopublishedpublished:
+  path: '/api/autovideo'
+  defaults:
+   _controller: '\Drupal\zeesalaam\Controller\ZeesalaamController::autoPublishedFromTranscode'
+  requirements:
+   _permission: 'access content'
+zeesalaam.get_dailyhunt:
+  path: '/dailyhunt/get.json'
+  defaults:
+   _controller: '\Drupal\zeesalaam\Controller\zeesalaamRestController::getData'
+  methods:  [GET] 
+  requirements:
+   _permission: 'access content'   
+   

@@ -1,0 +1,19 @@
+/**
+ * @file
+ * Styles for link buttons and action links.
+ */
+.lblflt{
+	float:left;
+}
+.clearfix{
+	clear:both;
+}
+.hideout{
+	display:none;
+}
+.padleft{
+	padding-left:10px;
+}
+.padright{
+	padding-right:10px;
+}
