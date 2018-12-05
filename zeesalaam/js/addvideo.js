@@ -131,7 +131,7 @@
 					if(video_type == 1){
 						//YouTube Video bImTB8omR0Y
 						var v_iframe_id = $.trim($('#edit-field-yt-code-0-value').val());
-						var youtubeApi = "AIzaSyDlOaSOXEHxUfBDtGJL_ljPSGkGPh51OVM";
+						var youtubeApi = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 						$.ajax({
 							url: "https://www.googleapis.com/youtube/v3/videos?id=" + v_iframe_id + "&key=" + youtubeApi + "&fields=items(snippet(title,thumbnails,description),contentDetails(duration))&part=snippet,contentDetails",
 							dataType: "json",
