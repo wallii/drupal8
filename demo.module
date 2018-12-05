@@ -1,0 +1,71 @@
+<?php
+/*
+* Implemets : hook_node_access().
+*/
+use \Drupal\Core\Access\AccessResultAllowed;
+use \Drupal\Core\Access\AccessResultForbidden;
+use \Drupal\Core\Access\AccessResultNeutral;
+use \Drupal\Core\Access\AccessResult;
+
+function demo_node_access(\Drupal\node\NodeInterface $node, $op, \Drupal\Core\Session\AccountInterface $account) {
+	 $type_name = $node->type->entity->id();
+	 
+	if ($type_name == 'video') {
+ 
+		$current_user = \Drupal::currentUser();
+	   $roles = $current_user->getRoles();
+	  // print_r($roles);
+		//die;
+ 
+		if (in_array('wali', $roles) || in_array('anonymous', $roles)) {
+ 
+				return AccessResult::forbidden();
+ 
+			
+		} else {
+			return AccessResult::neutral();
+		}
+	}
+}
+
+/**
+ * Implements hook_schema().
+ *
+ * @todo to be removed this as this is already declared in inactive.install file(confirm)
+ *
+ */
+ function demo_schema() {
+
+  $schema['user_node_permissions'] = array(
+    'description' => 'Basic Configuration',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary key to store unique information.',
+        'type' => 'serial',
+        'not null' => FALSE,
+      ),
+      'user_id' => array(
+        'description' => 'Storing user id.',
+        'type' => 'int',
+      ),
+      'role_id' => array(
+        'description' => 'Storing user role',
+        'type' => 'varchar',
+		'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+	  'content_machine_name' => array(
+        'description' => 'Storing content type Machine Name',
+        'type' => 'varchar',
+		'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('id'),
+
+  );
+
+  return $schema;
+}

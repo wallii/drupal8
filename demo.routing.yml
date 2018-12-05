@@ -1,0 +1,13 @@
+demo.article_published:
+  path: '/autopublish/article'
+  defaults:
+   _controller: '\Drupal\demo\Controller\DemoController::autopublishedArticle'
+  requirements:
+   _permission: 'access content'
+demo.backendconfiguration:
+  path: '/admin/config/development/demo' 
+  defaults:
+    _form: '\Drupal\demo\Form\BasicAdminConfiguration'
+    _title: 'Basic Configuration'
+  requirements: 
+     _permission: 'administer site configuration'  
