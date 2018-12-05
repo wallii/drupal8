@@ -1,0 +1,7 @@
+zeesalaam_rest.get:
+  path: '/dailyhunt/get.json'
+  defaults:
+   _controller: '\Drupal\zeesalaam_rest\Controller\zeesalaamRestController::getData'
+  methods:  [GET] 
+  requirements:
+   _permission: 'access content'
