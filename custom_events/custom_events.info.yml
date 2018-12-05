@@ -1,0 +1,7 @@
+name: 'Custom Event'
+type: module
+description: 'Create Custom Event Subscription'
+version: '8.x'
+core: '8.x'
+project: 'custom_module'
+datestamp: 1524255487
