@@ -1,7 +1,0 @@
-name: Zee Salaam
-type: module
-description: 'A custom module for Custom Coding.'
-version: '8.x'
-core: '8.x'
-project: 'zeesalaam'
-datestamp: 1524255487
