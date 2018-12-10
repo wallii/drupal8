@@ -1,5 +1,0 @@
-services: 
-  theme.negotiator.zeesalaam:
-    class: Drupal\zeesalaam\Theme\ZeesalaamNegotiator
-    tags:
-      - { name: theme_negotiator, priority: 10 }
